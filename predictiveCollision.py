@@ -158,7 +158,6 @@ class Circle:
 		return self.velocity * timeDifference + self.position
 
 class Circles:
-	#TODO (picrin) that class defines some double underscore "__" attributes, which is ugly and might break my logger. That needs replacing 
 	def expectedTimeCircles(self, circleA, circleB):
 		#TODO refactor this to work without self.time and move it as an unbound method to Circle class
 		positionDifference = circleA.currentPosition(self.time) - circleB.currentPosition(self.time)
@@ -329,23 +328,21 @@ class Circles:
 				yield index, i
 
 
+	def animate(self):
+		while True:
+			queue = py.event.get()
+			for event in queue:
+				if event.type == py.QUIT:
+					quit()
+			screen.fill([0,0,0])
+			[circle.plot(self.time) for circle in self.circles]
+			py.display.update()
+			self.animationStep()
+
 
 circles = [Circle(screen) for i in xrange(30)]
 
 time = 0.0
 
-circlesObject = Circles(circles)
-
-#collisionStateLogger(circlesObject, "testlog")
-
-while True:
-	queue = py.event.get()
-	for event in queue:
-		if event.type == py.QUIT:
-			quit()
-	screen.fill([0,0,0])
-	[circle.plot(circlesObject.time) for circle in circles]
-	py.display.update()
-	#print circlesObject.time
-	circlesObject.animationStep()
+Circles(circles).animate()
 
