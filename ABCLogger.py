@@ -8,10 +8,10 @@ class ABCLogger(object):
 		def someMethod(self, arguments, keywordargs = foo):
 			print "when you decorate me I'll log properly!"
 		...
-	For a class to be properly subclussed it is sufficient to override two methods writeHeader(self) and log(self, foreignInstance)
+	For a class to be properly subclussed it is sufficient to override log(self, foreignInstance). It is advised to override writeHeader(self).
 	"""
 	def writeHeader(self):
-		pass #overrideme
+		return "" #overrideme
 	def log(self, foreignInstance):
 		pass #overrideme
 
@@ -24,6 +24,7 @@ class ABCLogger(object):
 
 	instances = {}
 	def __new__(cls, filename, *args, **kwargs):
+		#TODO not filname, better path!
 		if filename not in ABCLogger.instances:
 			if os.path.isfile(filename):
 				os.remove(filename)

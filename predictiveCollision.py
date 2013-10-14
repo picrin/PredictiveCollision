@@ -11,6 +11,11 @@ wallsNumber = 4
 py.init()
 screen = py.display.set_mode(size)
 
+import ABCLogger
+class CirclesLogger(ABCLogger.ABCLogger):
+	def log(self, foreignSelf):
+		return repr(foreignSelf._i)
+
 class Numerical:
 
 	@staticmethod
@@ -153,8 +158,9 @@ class Circle:
 		return self.velocity * timeDifference + self.position
 
 class Circles:
-	#TODO refactor this to work without self.time and move it as an unbound method to Circle class
+	#TODO (picrin) that class defines some double underscore "__" attributes, which is ugly and might break my logger. That needs replacing 
 	def expectedTimeCircles(self, circleA, circleB):
+		#TODO refactor this to work without self.time and move it as an unbound method to Circle class
 		positionDifference = circleA.currentPosition(self.time) - circleB.currentPosition(self.time)
 		velocityDifference = circleA.velocity - circleB.velocity
 		radiiSum = circleA.radius + circleB.radius
@@ -196,7 +202,7 @@ class Circles:
 	@property
 	def circlesNo(self):
 		return len(self.circles)
-	
+
 	def __init__(self, circles):
 		self.circles = circles
 		self.time = 0
@@ -204,9 +210,9 @@ class Circles:
 		self.circleWall = numpy.ndarray(shape=([self.circlesNo, wallsNumber]), dtype = float) # the order is East, West, North, South
 		self.circleCircle.fill(float("inf"))
 		#properties of the next collision. To be modified exlusively by self.whenNextCollision:
-		self.__nextCollisionTime = 0
-		self.__isPairOfCircles = False
-		self.__i = (None, None) # can be (int, int) or (int,)
+		self._nextCollisionTime = 0
+		self._isPairOfCircles = False
+		self._i = (None, None) # can be (int, int) or (int,)
 		self.allPairsCollisions()
 		self.allWallsCollisions()
 		self.whenNextCollision()
@@ -255,59 +261,60 @@ class Circles:
 		circles = self.soonestCircleCircleCollision()
 		wall = self.soonestCircleWallCollision()
 		if circles[1] < wall[1]:
-			self.__isPairOfCircles = True
-			self.__i = circles[0]
-			self.__nextCollisionTime = circles[1]
+			self._isPairOfCircles = True
+			self._i = circles[0]
+			self._nextCollisionTime = circles[1]
 		else:
-			self.__isPairOfCircles = False
-			self.__i = wall[0]
-			self.__nextCollisionTime = wall[1]
+			self._isPairOfCircles = False
+			self._i = wall[0]
+			self._nextCollisionTime = wall[1]
 
 
 	def carryOutCircleCollision(self):
-		assert self.__isPairOfCircles == True
-		circles = tuple(self.circles[i] for i in self.__i)
+		assert self._isPairOfCircles == True
+		circles = tuple(self.circles[i] for i in self._i)
 		newVelocities = self.newVelocitiesCircles(*circles)
 		
 		
 		for i, circle in enumerate(circles):
-			circle.position = circle.currentPosition(self.__nextCollisionTime)
+			circle.position = circle.currentPosition(self._nextCollisionTime)
 			circle.velocity = newVelocities[i]
-			circle.time = self.__nextCollisionTime
+			circle.time = self._nextCollisionTime
 
-		for i in self.__i:
+		for i in self._i:
 			self.updateCircleWallEntry(i)
 		
 		
-		self.circleCircle[self.__i] = float("+inf")
-		for pairIndex in itertools.chain(self.yieldPairsForIndex(*self.__i), self.yieldPairsForIndex(*self.__i[::-1])):
+		self.circleCircle[self._i] = float("+inf")
+		for pairIndex in itertools.chain(self.yieldPairsForIndex(*self._i), self.yieldPairsForIndex(*self._i[::-1])):
 			self.updateCircleCircleEntry(pairIndex)
 	
 	def carryOutWallCollision(self):
-		assert self.__isPairOfCircles == False
-		if self.__i[1] in [0, 1]:
+		assert self._isPairOfCircles == False
+		if self._i[1] in [0, 1]:
 			component = 0
 		else:
 			component = 1
-		circle = self.circles[self.__i[0]]
-		circle.position = circle.currentPosition(self.__nextCollisionTime)
+		circle = self.circles[self._i[0]]
+		circle.position = circle.currentPosition(self._nextCollisionTime)
 		circle.velocity[component] *= -1
-		circle.time = self.__nextCollisionTime
-		self.updateCircleWallEntry(self.__i[0])
-		self.circleWall[self.__i] = float("+inf")
+		circle.time = self._nextCollisionTime
+		self.updateCircleWallEntry(self._i[0])
+		self.circleWall[self._i] = float("+inf")
 
-		for pairIndex in self.yieldPairsForIndex(*[self.__i[0]]*2):
+		for pairIndex in self.yieldPairsForIndex(*[self._i[0]]*2):
 			self.updateCircleCircleEntry(pairIndex)
 
+	@CirclesLogger("log")
 	def carryOutCollision(self):
-		assert self.isWithinCurrentTimeslice(self.__nextCollisionTime)
-		if self.__isPairOfCircles:
+		assert self.isWithinCurrentTimeslice(self._nextCollisionTime)
+		if self._isPairOfCircles:
 			self.carryOutCircleCollision()
 		else:
 			self.carryOutWallCollision()
 
 	def animationStep(self):
-		if self.isWithinCurrentTimeslice(self.__nextCollisionTime):
+		if self.isWithinCurrentTimeslice(self._nextCollisionTime):
 			self.carryOutCollision()
 			self.whenNextCollision()
 		else:
@@ -321,10 +328,15 @@ class Circles:
 			if i != withoutIndex:
 				yield index, i
 
+
+
 circles = [Circle(screen) for i in xrange(30)]
 
 time = 0.0
+
 circlesObject = Circles(circles)
+
+#collisionStateLogger(circlesObject, "testlog")
 
 while True:
 	queue = py.event.get()
@@ -334,5 +346,6 @@ while True:
 	screen.fill([0,0,0])
 	[circle.plot(circlesObject.time) for circle in circles]
 	py.display.update()
-	print circlesObject.time
+	#print circlesObject.time
 	circlesObject.animationStep()
+
