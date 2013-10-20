@@ -152,7 +152,7 @@ class Circles:
 		for pairIndex in self.yieldPairsForIndex(*[self._i[0]]*2):
 			self.updateCircleCircleEntry(pairIndex)
 
-	@CirclesLogger("log")
+	#vim mark X set here. 
 	def carryOutCollision(self):
 		assert self.isWithinCurrentTimeslice(self._nextCollisionTime)
 		if self._isPairOfCircles:
