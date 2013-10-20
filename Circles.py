@@ -87,7 +87,7 @@ class Circles:
 		minimum = float("+inf")
 		indices = None
 		for pair in self.yieldPairsIndices():
-			time = self.circleCircle[pair] 
+			time = self.circleCircle[pair]
 			if time < minimum:
 				minimum = time
 				indices = pair

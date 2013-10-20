@@ -1,7 +1,7 @@
 from global_values import *
 import math, numpy, random, yaml
 from Numerical import Numerical
-class Circle:
+class Circle(object):
 	
 	counter = 0 # your program shouldn't rely on this. Purely visual.
 	

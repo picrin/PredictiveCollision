@@ -20,14 +20,14 @@ class ABCLogger(object):
 	def decorate(myself, foreignMethod):
 		def augumentedMethod(foreignSelf, *args, **kwargs):
 			with myself as me:
-				me.logfile.write(me.log(foreignSelf) + "\n")
+				me.logfile.write(me.log(foreignSelf))
 			return foreignMethod(foreignSelf, *args, **kwargs)
 		return augumentedMethod
 	def hook(self, method):
 		def runtime_decorate(foreignMethod):
 			def augumentedMethod(*args, **kwargs):
 				with self as me:
-					me.logfile.write(me.log(method.im_self) + "\n")
+					me.logfile.write(me.log(method.im_self))
 				return foreignMethod(*args, **kwargs)
 			return augumentedMethod
 		setattr(method.im_self, method.__name__, runtime_decorate(method))
@@ -41,7 +41,7 @@ class ABCLogger(object):
 			ABCLogger.instances[filename] = new_instance
 			new_instance.logfileName = filename
 			with new_instance as self:
-				self.logfile.write(self.writeHeader() + "\n")
+				self.logfile.write(self.writeHeader())
 			return new_instance
 		else:
 			return instances[filename]
