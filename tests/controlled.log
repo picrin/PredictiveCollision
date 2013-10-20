@@ -1,0 +1,541 @@
+simulation: {height: 600, walls number: 4, width: 800}
+
+collision:
+  circle-circle: true
+  exact time: '0.213760798951'
+  objects collided:
+  - circle:
+      counter: 8
+      position: [698.5515298771413, 306.9640798732623]
+      time: 0
+      velocity: [-0.5406849820073721, 0.8412251483590393]
+  - circle:
+      counter: 28
+      position: [704.5255766795195, 326.37110949827377]
+      time: 0
+      velocity: [0.34542677777310243, -0.938445704981003]
+  time frame: '0'
+
+collision:
+  circle-circle: true
+  exact time: '6.01636895549'
+  objects collided:
+  - circle:
+      counter: 16
+      position: [73.56330891791094, 447.53729311777096]
+      time: 0
+      velocity: [-0.5872605721217465, -0.8093979370070318]
+  - circle:
+      counter: 26
+      position: [87.01512128346764, 441.7536872041567]
+      time: 0
+      velocity: [0.41341403391780757, 0.9105431546938376]
+  time frame: '6'
+
+collision:
+  circle-circle: false
+  exact time: '11.107106613'
+  objects collided: []
+  time frame: '11'
+
+collision:
+  circle-circle: false
+  exact time: '11.4685294081'
+  objects collided: []
+  time frame: '11'
+
+collision:
+  circle-circle: true
+  exact time: '16.8758102564'
+  objects collided:
+  - circle:
+      counter: 2
+      position: [355.85938718932096, 170.81457547190203]
+      time: 0
+      velocity: [0.9997257659482608, 0.02341779022801648]
+  - circle:
+      counter: 4
+      position: [392.3065645603691, 149.544446826097]
+      time: 0
+      velocity: [-0.009370233045993267, 0.9999560984026568]
+  time frame: '16'
+
+collision:
+  circle-circle: false
+  exact time: '26.3046453547'
+  objects collided: []
+  time frame: '26'
+
+collision:
+  circle-circle: false
+  exact time: '29.818205312'
+  objects collided: []
+  time frame: '29'
+
+collision:
+  circle-circle: false
+  exact time: '73.6985875078'
+  objects collided: []
+  time frame: '73'
+
+collision:
+  circle-circle: false
+  exact time: '95.1084288976'
+  objects collided: []
+  time frame: '95'
+
+collision:
+  circle-circle: false
+  exact time: '104.630029253'
+  objects collided: []
+  time frame: '104'
+
+collision:
+  circle-circle: false
+  exact time: '111.247123389'
+  objects collided: []
+  time frame: '111'
+
+collision:
+  circle-circle: false
+  exact time: '115.148166392'
+  objects collided: []
+  time frame: '115'
+
+collision:
+  circle-circle: true
+  exact time: '116.056378003'
+  objects collided:
+  - circle:
+      counter: 10
+      position: [10.0, 342.91703263843203]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        jZc3ZlIoWkA=
+      velocity: [0.27357389934880205, -0.9618509872090851]
+  - circle:
+      counter: 16
+      position: [70.03013264301303, 442.66765649692235]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        PwkCBsMQGEA=
+      velocity: [-0.3668238033711788, -0.904174712409299]
+  time frame: '116'
+
+collision:
+  circle-circle: true
+  exact time: '125.999908201'
+  objects collided:
+  - circle:
+      counter: 1
+      position: [400.9207031354062, 237.21035258452508]
+      time: 0
+      velocity: [0.8317657763400873, 0.5551267362588221]
+  - circle:
+      counter: 5
+      position: [599.096641514025, 197.05601998538586]
+      time: 0
+      velocity: [-0.6008884551404392, 0.7993328871496133]
+  time frame: '125'
+
+collision:
+  circle-circle: false
+  exact time: '134.446464571'
+  objects collided: []
+  time frame: '134'
+
+collision:
+  circle-circle: false
+  exact time: '137.799962516'
+  objects collided: []
+  time frame: '137'
+
+collision:
+  circle-circle: true
+  exact time: '143.758423228'
+  objects collided:
+  - circle:
+      counter: 7
+      position: [207.77646314236264, 116.82825099913484]
+      time: 0
+      velocity: [-0.9519012623620293, 0.3064049391141974]
+  - circle:
+      counter: 14
+      position: [182.60539008194115, 228.63121076894024]
+      time: 0
+      velocity: [-0.9067626829255458, -0.4216413604636837]
+  time frame: '143'
+
+collision:
+  circle-circle: false
+  exact time: '148.029020802'
+  objects collided: []
+  time frame: '148'
+
+collision:
+  circle-circle: true
+  exact time: '149.969461588'
+  objects collided:
+  - circle:
+      counter: 4
+      position: [392.1484342854263, 166.4195162075143]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        tu3YGTXgMEA=
+      velocity: [1.1684767094157817, 0.3125789735246429]
+  - circle:
+      counter: 8
+      position: [698.4359526234066, 307.1439008330732]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        VKZUjINcyz8=
+      velocity: [-0.9644016636774778, -0.535242506783832]
+  time frame: '149'
+
+collision:
+  circle-circle: true
+  exact time: '151.022940266'
+  objects collided:
+  - circle:
+      counter: 14
+      position: [52.25061654213542, 168.01671362076846]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        nlvKAEX4YUA=
+      velocity: [-1.0649436465310658, 0.28095482476390166]
+  - circle:
+      counter: 25
+      position: [10.0, 180.6639610115374]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        nIMRcEnOYEA=
+      velocity: [0.9925839257288417, -0.1215613029903891]
+  time frame: '151'
+
+collision:
+  circle-circle: true
+  exact time: '153.840131432'
+  objects collided:
+  - circle:
+      counter: 7
+      position: [70.9326385959944, 160.8765419156113]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        nlvKAEX4YUA=
+      velocity: [-0.7937202987565095, -0.39619124611338796]
+  - circle:
+      counter: 14
+      position: [44.514315277383595, 170.05771473217862]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        Dcw57bvgYkA=
+      velocity: [0.9339631671051681, -0.317395472868782]
+  time frame: '153'
+
+collision:
+  circle-circle: true
+  exact time: '164.753362345'
+  objects collided:
+  - circle:
+      counter: 13
+      position: [466.8655216992687, 210.56732038278628]
+      time: 0
+      velocity: [-0.7648117112159944, 0.6442538679642228]
+  - circle:
+      counter: 20
+      position: [158.77555442127544, 329.71068201142543]
+      time: 0
+      velocity: [0.999826498810338, -0.018627191861927943]
+  time frame: '164'
+
+collision:
+  circle-circle: false
+  exact time: '167.373103339'
+  objects collided: []
+  time frame: '167'
+
+collision:
+  circle-circle: true
+  exact time: '180.083674906'
+  objects collided:
+  - circle:
+      counter: 14
+      position: [47.14546806088115, 169.16355100996603]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        QzpQW+I6Y0A=
+      velocity: [-0.5831083500331395, 0.209833133048332]
+  - circle:
+      counter: 25
+      position: [10.0, 186.444480840374]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        D59pdvDrZEA=
+      velocity: [1.0063228879073922, 0.4767889946422946]
+  time frame: '180'
+
+collision:
+  circle-circle: true
+  exact time: '196.581043693'
+  objects collided:
+  - circle:
+      counter: 5
+      position: [523.3847513273272, 297.7718903882266]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        jIH3fv5/X0A=
+      velocity: [0.8227977117625643, 0.5108661422443972]
+  - circle:
+      counter: 15
+      position: [767.664217250265, 260.44364549954]
+      time: 0
+      velocity: [-0.8894406462551286, 0.4570506938942979]
+  time frame: '196'
+
+collision:
+  circle-circle: false
+  exact time: '198.826414263'
+  objects collided: []
+  time frame: '198'
+
+collision:
+  circle-circle: true
+  exact time: '199.298555455'
+  objects collided:
+  - circle:
+      counter: 10
+      position: [13.125950782686083, 331.9265878136495]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        M2h7spsDXUA=
+      velocity: [0.1287894577749895, -1.202435802469724]
+  - circle:
+      counter: 25
+      position: [22.790939086943965, 192.50474147945835]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        UTT/dq2CZkA=
+      velocity: [-0.19821346237679494, 1.0371671304977994]
+  time frame: '199'
+
+collision:
+  circle-circle: false
+  exact time: '204.62102637'
+  objects collided: []
+  time frame: '204'
+
+collision:
+  circle-circle: false
+  exact time: '216.750106735'
+  objects collided: []
+  time frame: '216'
+
+collision:
+  circle-circle: true
+  exact time: '221.757035384'
+  objects collided:
+  - circle:
+      counter: 10
+      position: [23.846665680831222, 231.83321336896216]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        UZwrxI3paEA=
+      velocity: [-0.02728548805256517, 1.0490161836853058]
+  - circle:
+      counter: 16
+      position: [9.999999999999996, 284.40165706197325]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        Hryxct+TaUA=
+      velocity: [0.22203936179736627, -0.6635898971486601]
+  time frame: '221'
+
+collision:
+  circle-circle: false
+  exact time: '224.047059502'
+  objects collided: []
+  time frame: '224'
+
+collision:
+  circle-circle: true
+  exact time: '231.568825242'
+  objects collided:
+  - circle:
+      counter: 0
+      position: [495.53986316000226, 590.0]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        IjjkjnvJXEA=
+      velocity: [0.676331709291692, -0.736597189111239]
+  - circle:
+      counter: 9
+      position: [790.0, 465.1893422280173]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        bVYqFuPvJkA=
+      velocity: [-0.9961205382308864, 0.08799928019369858]
+  time frame: '231'
+
+collision:
+  circle-circle: false
+  exact time: '239.37427445'
+  objects collided: []
+  time frame: '239'
+
+collision:
+  circle-circle: true
+  exact time: '243.970537288'
+  objects collided:
+  - circle:
+      counter: 13
+      position: [340.86022071559404, 316.7103113336691]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        KztZixuYZEA=
+      velocity: [0.9932554629814074, -0.035619076141875594]
+  - circle:
+      counter: 21
+      position: [670.9179073835663, 394.4526339409316]
+      time: 0
+      velocity: [-0.9520299309374013, -0.3060049192404054]
+  time frame: '243'
+
+collision:
+  circle-circle: false
+  exact time: '253.358139202'
+  objects collided: []
+  time frame: '253'
+
+collision:
+  circle-circle: true
+  exact time: '272.587055937'
+  objects collided:
+  - circle:
+      counter: 6
+      position: [10.000000000000007, 479.4798479746517]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        lrL9Spk5YUA=
+      velocity: [0.48888694644659525, -0.8723471519951927]
+  - circle:
+      counter: 27
+      position: [203.07959570309657, 590.0]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        3EpA53XRPUA=
+      velocity: [-0.4595188588405662, -0.8881680124671592]
+  time frame: '272'
+
+collision:
+  circle-circle: true
+  exact time: '298.977635751'
+  objects collided:
+  - circle:
+      counter: 8
+      position: [554.0113056373617, 226.98828413762894]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        sNdO1AW/YkA=
+      velocity: [1.11834937667658, 0.42168143211022996]
+  - circle:
+      counter: 23
+      position: [565.7414443176864, 551.8279044895478]
+      time: 0
+      velocity: [0.5628381797243605, -0.8265671076473878]
+  time frame: '298'
+
+collision:
+  circle-circle: true
+  exact time: '310.211795598'
+  objects collided:
+  - circle:
+      counter: 17
+      position: [566.059757641208, 590.0]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        gRrX3wAYa0A=
+      velocity: [-0.9370445516893738, -0.3492098339813189]
+  - circle:
+      counter: 19
+      position: [409.30438667762303, 590.0]
+      time: !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        YhdY4HWrb0A=
+      velocity: [0.9274454651145319, -0.3739584325008459]
+  time frame: '310'
+
+collision:
+  circle-circle: false
+  exact time: '312.903483879'
+  objects collided: []
+  time frame: '312'
+

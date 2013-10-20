@@ -1,5 +1,5 @@
 from global_values import *
-import math, numpy, random
+import math, numpy, random, yaml
 from Numerical import Numerical
 class Circle:
 	
@@ -81,3 +81,4 @@ class Circle:
 		timeDifference = time - self.time
 		#assert timeDifference >= 0
 		return self.velocity * timeDifference + self.position
+

@@ -1,30 +1,32 @@
 from global_values import *
 import random, math
 import ABCLogger, Circles, Circle
+import yaml
 
-class CirclesLogger(ABCLogger.ABCLogger):
+class CollisionLogger(ABCLogger.ABCLogger):
 	def writeHeader(self):
-		return "circle-circle: frameNo , exactTime\n\tcircleNo , [positionX, positionY] "
+		return yaml.dump({'simulation':{'width': width, 'height': height, 'walls number': wallsNumber}})
 	def log(self, foreignSelf):
 		time = str(foreignSelf.time)
 		exactTime = str(foreignSelf._nextCollisionTime)
-		toreturn = time + "," + exactTime
-		if foreignSelf._isPairOfCircles == True:
+		isCircleCircle = foreignSelf._isPairOfCircles
+		collisionSpecific = []
+		collisionInfo = {'time frame': time, 'exact time': exactTime, 'circle-circle': isCircleCircle, 'objects collided': collisionSpecific}
+		yamlDict = {'collision': collisionInfo}
+		if isCircleCircle:
 			circleInstances = [foreignSelf.circles[i] for i in foreignSelf._i]
-			labels = [circle.counter for circle in circleInstances]
-			labelA = str(labels[0])
-			positionA = str(circleInstances[0].position)
-			speedA = str(circleInstances[0].velocity)
-			labelB = str(labels[1])
-			positionB = str(circleInstances[1].position)
-			speedB = str(circleInstances[1].velocity)
-			toreturn += "\n\t" + labelA + "," + positionA + "," + speedA + "\n\t" + labelB + "," + positionB + "," + speedB
-			
-		return toreturn
+			for circle in circleInstances:
+				 collisionSpecific.append(circle.dictChangables())
+		return yaml.dump(yamlDict)
 
+class CircleYamled(Circle.Circle):
+	def dictChangables(self):
+		return {'circle': {'counter': self.counter,'position': [float(number) for number in self.position], 'velocity': [float(number) for number in self.velocity], 'time': self.time}}
+	def dictAllRelevant(self):
+		return {'circle': {'counter': self.counter,'position': [float(number) for number in self.position], 'velocity': [float(number) for number in self.velocity],'time': self.time, 'color': self.color, 'radius': self.radius}}
 
-logger = CirclesLogger("controlled.log")
-circlesList = [Circle.Circle(screen) for i in xrange(30)]
+logger = CollisionLogger("controlled.log")
+circlesList = [CircleYamled(screen) for i in xrange(30)]
 
 
 circles = Circles.Circles(circlesList)
