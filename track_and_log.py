@@ -17,6 +17,9 @@ class CollisionLogger(ABCLogger.ABCLogger):
 			circleInstances = [foreignSelf.circles[i] for i in foreignSelf._i]
 			for circle in circleInstances:
 				 collisionSpecific.append(circle.dictChangables())
+		else:
+			circleInstance = foreignSelf._i[0]
+			collisionSpecific.append(foreignSelf.circles[circleInstance].dictChangables())
 		return "---\n" + yaml.dump(yamlDict)
 		
 class CircleYamled(Circle.Circle):
@@ -26,9 +29,11 @@ class CircleYamled(Circle.Circle):
 		return {'circle': {'counter': self.counter,'position': [float(number) for number in self.position], 'velocity': [float(number) for number in self.velocity], 'time': self.time, 'color': self.color, 'radius': self.radius}}
 
 
+circleA = CircleYamled(screen, position = [width/2 - 100, height/2], angle = + 0.1, speed = 1)
+circleB = CircleYamled(screen, position = [width/2 + 100, height/2], angle = math.pi - 0.1, speed = 1)
 
-logger = CollisionLogger("controlled.log")
-circlesList = [CircleYamled(screen) for i in xrange(30)]
+logger = CollisionLogger("yaml.log")
+circlesList = [circleA, circleB]
 
 
 circles = Circles.Circles(circlesList)

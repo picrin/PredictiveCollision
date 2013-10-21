@@ -87,7 +87,7 @@ class Circles:
 		minimum = float("+inf")
 		indices = None
 		for pair in self.yieldPairsIndices():
-			time = self.circleCircle[pair]
+			time = float(self.circleCircle[pair])
 			if time < minimum:
 				minimum = time
 				indices = pair
@@ -98,7 +98,7 @@ class Circles:
 		index = None
 		for circleIndex in range(self.circlesNo):
 			for wallIndex in range(wallsNumber):
-				time = self.circleWall[circleIndex, wallIndex]
+				time = float(self.circleWall[circleIndex, wallIndex])
 				if time < minimum:
 					minimum = time
 					index = circleIndex, wallIndex
@@ -122,15 +122,13 @@ class Circles:
 		circles = tuple(self.circles[i] for i in self._i)
 		newVelocities = self.newVelocitiesCircles(*circles)
 		
-		
 		for i, circle in enumerate(circles):
 			circle.position = circle.currentPosition(self._nextCollisionTime)
 			circle.velocity = newVelocities[i]
-			circle.time = self._nextCollisionTime
+			circle.time = float(self._nextCollisionTime)
 
 		for i in self._i:
 			self.updateCircleWallEntry(i)
-		
 		
 		self.circleCircle[self._i] = float("+inf")
 		for pairIndex in itertools.chain(self.yieldPairsForIndex(*self._i), self.yieldPairsForIndex(*self._i[::-1])):
@@ -145,7 +143,7 @@ class Circles:
 		circle = self.circles[self._i[0]]
 		circle.position = circle.currentPosition(self._nextCollisionTime)
 		circle.velocity[component] *= -1
-		circle.time = self._nextCollisionTime
+		circle.time = float(self._nextCollisionTime)
 		self.updateCircleWallEntry(self._i[0])
 		self.circleWall[self._i] = float("+inf")
 
