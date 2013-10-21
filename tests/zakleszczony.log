@@ -1,0 +1,45 @@
+sion:
+  circle-circle: false
+  exact time: 517967.4418002162
+  objects collided:
+  - circle:
+      counter: 1
+      position: [10.000328617890375, 9.999999999981469]
+      time: 517967.44125252083
+      velocity: [-0.6000011881417273, 0.7690452487825687]
+  time frame: 517967
+---
+collision:
+  circle-circle: false
+  exact time: 517967.44125252083
+  objects collided:
+  - circle:
+      counter: 1
+      position: [10.000000000010974, 10.000421202512085]
+      time: 517967.4418002162
+      velocity: [0.6000011881417273, 0.7690452487825687]
+  time frame: 517967
+---
+collision:
+  circle-circle: false
+  exact time: 517967.4418002162
+  objects collided:
+  - circle:
+      counter: 1
+      position: [9.999671382131574, 9.999999999981469]
+      time: 517967.44125252083
+      velocity: [0.6000011881417273, -0.7690452487825687]
+  time frame: 517967
+---
+collision:
+  circle-circle: false
+  exact time: 517967.44125252083
+  objects collided:
+  - circle:
+      counter: 1
+      position: [10.000000000010974, 9.999578797450853]
+      time: 517967.4418002162
+      velocity: [-0.6000011881417273, -0.7690452487825687]
+  time frame: 517967
+---
+
