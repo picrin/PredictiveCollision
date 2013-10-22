@@ -10,7 +10,7 @@ import Numerical, ABCLogger, Circles, Circle
 circles = [Circle.Circle(screen) for i in xrange(30)]
 
 time = 0.0
-for circle in circles:
-	print circle.strAllRelevantYaml()
-#Circles.Circles(circles).animate()
+#for circle in circles:
+#	print circle.strAllRelevantYaml()
+Circles.Circles(circles).animate()
 
