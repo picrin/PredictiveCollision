@@ -11,6 +11,9 @@ class ABCLogger(object):
 		...
 	For a class to be properly subclussed it is sufficient to override log(self, foreignInstance). It is advised to override writeHeader(self).
 	"""
+	
+	instances = {}
+	
 	def writeHeader(self):
 		return "" #overrideme
 	def log(self, foreignInstance):
@@ -31,7 +34,7 @@ class ABCLogger(object):
 				return foreignMethod(*args, **kwargs)
 			return augumentedMethod
 		setattr(method.im_self, method.__name__, runtime_decorate(method))
-	instances = {}
+		
 	def __new__(cls, filename, *args, **kwargs):
 		#TODO not filname, better path!
 		if filename not in ABCLogger.instances:

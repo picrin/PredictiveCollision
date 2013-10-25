@@ -11,7 +11,7 @@ class SimpleClass:
 		self.logThat = "something else"
 	def doFunnyThingsWithAttribute(self, append):
 		self.logThis = self.logThis + " " + append
-
+'''
 simpleLogger = SimpleLogger("log")
 simpleInstance = SimpleClass()
 simpleLogger.hook(simpleInstance.doFunnyThingsWithAttribute) 
@@ -21,3 +21,4 @@ simpleInstance.doFunnyThingsWithAttribute("3")
 simpleInstance.doFunnyThingsWithAttribute("4")
 simpleInstance.doFunnyThingsWithAttribute("aaa")
 
+'''

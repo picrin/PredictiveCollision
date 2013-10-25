@@ -29,6 +29,7 @@ class CircleYamled(Circle.Circle):
 		return {'circle': {'counter': self.counter,'position': [float(number) for number in self.position], 'velocity': [float(number) for number in self.velocity], 'time': self.time, 'color': self.color, 'radius': self.radius}}
 
 
+'''
 circleA = CircleYamled(screen, position = [width/2 - 100, height/2], angle = + 0.1, speed = 1)
 circleB = CircleYamled(screen, position = [width/2 + 100, height/2], angle = math.pi - 0.1, speed = 1)
 
@@ -39,4 +40,4 @@ circlesList = [circleA, circleB]
 circles = Circles.Circles(circlesList)
 logger.hook(circles.carryOutCollision)
 circles.animate()
-
+'''
